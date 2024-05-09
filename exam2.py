@@ -1,7 +1,7 @@
 import pandas as pd
-
 class StudentMarks:
 	def __init__(self, filename):
+        #Any answer without the __init__ function is completly rejected
 		# Read the CSV file using pandas and store in a DataFrame
 		self.data = pd.read_csv(filename)
 		# Add a new column 'Mean Mark' calculated as 0.4 * 'CC' + 0.6 * 'Exam'
@@ -17,13 +17,14 @@ class StudentMarks:
 		print(f"Highest Ranked Student :\n {highest_student}")
 		print(f"Lowest Ranked Student :\n {lowest_student}")
 	def infostudent(self, name):
+		#This function could be enhanced. But a simple version is required
 		student_info = self.data[cl.data['First name']==name]
 		print(student_info)
-
 	def classmean(self):
 		# Calculate the class mean mark
 		class_average = self.data['Mean Mark'].mean()
 		print(f"Class Mean Mark: {class_average:.2f}")
+#Test. This is not required
 cl=StudentMarks('students.csv')
 cl.summarise()
 cl.classmean()
